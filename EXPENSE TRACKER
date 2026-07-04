@@ -1,0 +1,31 @@
+total = 0
+
+while True:
+    print("\n=== EXPENSE TRACKER ===")
+    print("1. Add Expense")
+    print("2. View Total Spent")
+    print("3. Exit")
+
+    try:
+        choice = int(input("Enter your choice: "))
+    except ValueError:
+        print("Please enter a valid number!")
+        continue
+
+    if choice == 1:
+        try:
+            expense = float(input("Enter expense amount: "))
+            total += expense
+            print("Expense added successfully!")
+        except ValueError:
+            print("Please enter a valid amount!")
+
+    elif choice == 2:
+        print(f"Total Spent: ₹{total:.2f}")
+
+    elif choice == 3:
+        print("Goodbye!")
+        break
+
+    else:
+        print("Invalid choice! Please try again.")
